@@ -28,4 +28,35 @@ A modular pipeline that ingests, transforms, and builds a knowledge graph from r
 
 - [ ] Replace `graph-mock` with a real Neo4j service and implement the actual graph API.
 - [ ] Replace `messaging-mock` with a real RabbitMQ service and implement real message queue logic.
-- [ ] Update service integrations to use real infrastructure instead of mocks. 
+- [ ] Update service integrations to use real infrastructure instead of mocks.
+
+## TODO
+
+### Ingestion Service
+- [ ] Implement `connect()` method in `generic_connector.py`
+- [ ] Implement real extraction logic in `extract()` (currently just `pass`)
+- [ ] Replace mock connector with real CSV/Postgres handling
+
+### Transformer Service
+- [ ] Flesh out `normalize(record)` logic (currently just returns input)
+- [ ] Implement real transformation logic in `transform()` (currently just `pass`)
+- [ ] Add field validation for incoming data
+
+### Graph Builder
+- [ ] Replace dummy graph with Neo4j integration (currently using `graph-mock`)
+- [ ] Build real Cypher schema from `schema.cypher` (currently a placeholder)
+- [ ] Implement real logic in `build_graph(data)` (currently returns `{}`)
+
+### Messaging
+- [ ] Replace `messaging-mock` with RabbitMQ implementation
+
+### API Service
+- [ ] Flesh out `RequestModel` and `ResponseModel` in `schemas/` (currently just `pass`)
+
+### Shared Library
+- [ ] Implement `load_config()` in `shared/config/loader.py` (currently just `pass`)
+- [ ] Implement `get_logger()` in `shared/logging/logger.py` (currently just `pass`)
+
+### General
+- [ ] Replace all `pass` and placeholder stubs in core services and shared modules
+- [ ] Add unit tests for all core services 
