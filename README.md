@@ -24,6 +24,31 @@ A modular pipeline that ingests, transforms, and builds a knowledge graph from r
   curl http://localhost:8002/health  # messaging-mock
   ```
 
+## Local Development
+
+### Prerequisites
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running
+- [Python 3.11+](https://www.python.org/downloads/) (for running scripts directly, if needed)
+
+### Running the Full Stack
+1. Build and start all services:
+   ```sh
+   docker-compose up --build -d
+   ```
+2. Check that all containers are running:
+   ```sh
+   docker-compose ps
+   ```
+3. Test health endpoints:
+   - API:           `curl http://localhost:8000/health`  (should return `{"status":"ok"}`)
+   - Graph mock:    `curl http://localhost:8001/health`  (should return 404 for now)
+   - Messaging mock:`curl http://localhost:8002/health`  (should return 404 for now)
+
+### Stopping Services
+```sh
+docker-compose down
+```
+
 ## Next Steps
 
 - [ ] Replace `graph-mock` with a real Neo4j service and implement the actual graph API.
