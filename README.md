@@ -22,4 +22,10 @@ A modular pipeline that ingests, transforms, and builds a knowledge graph from r
   ```sh
   curl http://localhost:8001/health  # graph-mock
   curl http://localhost:8002/health  # messaging-mock
-  ``` 
+  ```
+
+## Next Steps
+
+- [ ] Replace `graph-mock` with a real Neo4j service and implement the actual graph API.
+- [ ] Replace `messaging-mock` with a real RabbitMQ service and implement real message queue logic.
+- [ ] Update service integrations to use real infrastructure instead of mocks. 
